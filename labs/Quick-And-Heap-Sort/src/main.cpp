@@ -173,7 +173,7 @@ public:
 
 int main()
 {	
-	Interface::Run();
+	//Interface::Run();
 
 
 	/*size_t n = 100'000'000;
@@ -191,10 +191,10 @@ int main()
 
 	//double time = OneTimeExperiment(Sorting_Method::QUICK_SORT_ITERATIVE, Filling_Method::NON_DECREASE, 100'000, 0, 1'000'000'000, false ,true, true);
 
-	/*Experiment1(1, 1, 100'000'000 + 1, 10'000'000,
-		"file_random_heap_sort.txt", "file_random_quick_sort.txt",
-		"file_non_decrease_heap_sort.txt", "file_non_decrease_quick_sort.txt",
-		"file_non_increase_heap_sort.txt", "file_non_increase_quick_sort.txt");*/
+	Experiment1(1, 1, 1'000'000 + 1, 10'000,
+		"../../data/file_random_heap_sort.txt", "../../data/file_random_quick_sort.txt",
+		"../../data/file_non_decrease_heap_sort.txt", "../../data/file_non_decrease_quick_sort.txt",
+		"../../data/file_non_increase_heap_sort.txt", "../../data/file_non_increase_quick_sort.txt");
 
 	/*std::ifstream in("file_random_heap_sort.txt");
 	std::string line;
