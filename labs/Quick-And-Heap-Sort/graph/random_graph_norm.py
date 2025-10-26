@@ -33,7 +33,11 @@ if x1 and y1:
     plt.plot(x1, y1, marker='o', linestyle='-', color='r', label='HeapSort')
     plt.plot(x2, y2, marker='o', linestyle='-', color='b', label='QuickSort') 
     plt.xlabel('n', fontweight='bold', labelpad=5, fontsize=25)
+<<<<<<< HEAD
     plt.ylabel('Time/(nlogn)', fontweight='bold', labelpad=5, fontsize=25)
+=======
+    plt.ylabel('Time/n', fontweight='bold', labelpad=5, fontsize=25)
+>>>>>>> b1fccd400925674cea0df64df20c561d1f242a29
     plt.title('Random Filling', fontweight='bold', fontsize=30)
 
     plt.xticks(fontsize=23, fontweight='bold')
