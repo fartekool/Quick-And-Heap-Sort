@@ -71,7 +71,7 @@ class TreeHeap
     {
         if (_heap_size < 2) return;
 
-        for (size_t i = (_heap_size - 1) - 1 / 3; ; --i) // ÂÎÇÌÎÍÆÍÀ ÎØÈÁÊÀ, ÍÀÄÎ ÏÐÎÂÅÐÈÒÜ
+        for (size_t i = (_heap_size - 1) - 1 / 3; ; --i) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             siftDown(i);
             if (i == 0) break;

@@ -62,7 +62,7 @@ def divide_lists(numerator_list, denominator_list):
         if denominator == 0 or denominator == 1:
             # Безопасная обработка деления на ноль. 
             # NaN (Not a Number) - стандартный способ показать невалидный результат
-            results.append(numerator) 
+            results.append(math.nan) 
             # Если вы предпочитаете 0: results.append(0)
         else:
             # Выполняем деление

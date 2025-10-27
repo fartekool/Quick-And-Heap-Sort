@@ -70,6 +70,33 @@ class Interface
 		}
 
 	}
+	static void ExpMode()
+	{	
+		std::cout << "Select the experiment:" << std::endl;
+		std::cout << "(1) q = 1; w = 10^9; n = 1, ... , 10^6 + 1 with step = 10^4" <<std::endl;
+		std::cout << "(2) q = 1; w = 1, ... , 100 with step 1; n = 10^6" << std::endl;
+		char experiment;
+		while (true)
+		{
+			std::cout << "Experiment: ";
+			std::cin >> experiment;
+			if (experiment != '1' && experiment != '2')
+			{
+				std::cout << "Incorrect input!" << std::endl;
+			}
+			else
+			{
+				break;
+			}
+		}
+		if (experiment == '1')
+		{
+			Experiment1(1, 1, 10'000'000 + 1, 1'000'000,
+		"../../data/file_random_heap_sort1.txt", "../../data/file_random_quick_sort1.txt",
+		"../../data/file_non_decrease_heap_sort1.txt", "../../data/file_non_decrease_quick_sort1.txt",
+		"../../data/file_non_increase_heap_sort1.txt", "../../data/file_non_increase_quick_sort1.txt");
+		}
+	}
 	static void UserMode()
 	{
 		std::cout << "Select the sorting you want: Q(quicksort), H(heapsort), B(both):" << std::endl;
@@ -160,6 +187,8 @@ public:
 		char selected_mode = SelectMode();
 		if (selected_mode == 'U')
 			UserMode();
+		if (selected_mode == 'E')
+			ExpMode();
 	}
 };
 
@@ -173,7 +202,7 @@ public:
 
 int main()
 {	
-	//Interface::Run();
+	Interface::Run();
 
 
 	/*size_t n = 100'000'000;
@@ -191,10 +220,7 @@ int main()
 
 	//double time = OneTimeExperiment(Sorting_Method::QUICK_SORT_ITERATIVE, Filling_Method::NON_DECREASE, 100'000, 0, 1'000'000'000, false ,true, true);
 
-	Experiment1(1, 1, 1'000'000 + 1, 10'000,
-		"../../data/file_random_heap_sort.txt", "../../data/file_random_quick_sort.txt",
-		"../../data/file_non_decrease_heap_sort.txt", "../../data/file_non_decrease_quick_sort.txt",
-		"../../data/file_non_increase_heap_sort.txt", "../../data/file_non_increase_quick_sort.txt");
+	
 
 	/*std::ifstream in("file_random_heap_sort.txt");
 	std::string line;

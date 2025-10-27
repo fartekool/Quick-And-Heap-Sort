@@ -128,7 +128,8 @@ double OneTimeExperiment(Sorting_Method sort_method, Filling_Method fill_method,
 		sorting_name = "QUICK_SORT_ITERATIVE";
 	}
 	if (sort_method == Sorting_Method::HEAP_SORT)
-	{
+	{	
+		TreeHeap<uint32_t> heap(vec);
 		time = Timer(Sort_3<uint32_t>, vec);
 		sorting_name = "HEAP_SORT";
 	}
@@ -194,7 +195,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
@@ -226,7 +227,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
@@ -255,7 +256,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
@@ -286,7 +287,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
@@ -316,7 +317,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
@@ -348,7 +349,7 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 			out << length << ' ' << avg_time << std::endl;
 			if ((double(length) / double(right_n - left_n)) * 100 > percent)
 			{
-				std::cout << percent << "%\n";
+				std::cout << percent << "%" << std::endl;
 				percent += 10;
 			}
 		}
