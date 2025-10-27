@@ -91,10 +91,17 @@ class Interface
 		}
 		if (experiment == '1')
 		{
-			Experiment1(1, 1, 10'000'000 + 1, 1'000'000,
+			Experiment1(1, 1, 1'000'000 + 1, 10'000,
 		"../../data/file_random_heap_sort1.txt", "../../data/file_random_quick_sort1.txt",
 		"../../data/file_non_decrease_heap_sort1.txt", "../../data/file_non_decrease_quick_sort1.txt",
 		"../../data/file_non_increase_heap_sort1.txt", "../../data/file_non_increase_quick_sort1.txt");
+		}
+		if (experiment == '2')
+		{
+			Experiment2(1, 1, 100, 1,
+		"../../data/file_random_heap_sort2.txt", "../../data/file_random_quick_sort2.txt",
+		"../../data/file_non_decrease_heap_sort2.txt", "../../data/file_non_decrease_quick_sort2.txt",
+		"../../data/file_non_increase_heap_sort2.txt", "../../data/file_non_increase_quick_sort2.txt");
 		}
 	}
 	static void UserMode()

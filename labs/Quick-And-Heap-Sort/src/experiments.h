@@ -357,3 +357,200 @@ void Experiment1(size_t num_of_exp, size_t left_n, size_t right_n, size_t step,
 	out.close();
 	std::cout << "File " << file_non_increase_quick_sort << " is closed." << std::endl;
 }
+
+
+
+void Experiment2(size_t num_of_exp, uint32_t left_w, uint32_t right_w, uint32_t step, 
+	std::string file_random_heap_sort, std::string file_random_quick_sort, 
+	std::string file_non_decrease_heap_sort, std::string file_non_decrease_quick_sort,
+	std::string file_non_increase_heap_sort, std::string file_non_increase_quick_sort)
+{	
+	uint32_t q = 1;
+	size_t n = 1'000'000;
+	std::ofstream out;
+	bool is_open;
+
+
+
+	// 1. Random Heap Sort
+	out.open(file_random_heap_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " <<  file_random_heap_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::HEAP_SORT, Filling_Method::RANDOM, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_random_heap_sort << " is closed." << std::endl;
+
+
+
+
+
+	// 2. Random Quick Sort
+	out.open(file_random_quick_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " << file_random_quick_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::QUICK_SORT_ITERATIVE, Filling_Method::RANDOM, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_random_quick_sort << " is closed." << std::endl;
+
+
+	// 3. Non-Decrease Heap Sort
+	out.open(file_non_decrease_heap_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " << file_non_decrease_heap_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::HEAP_SORT, Filling_Method::NON_DECREASE, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_non_decrease_heap_sort << " is closed." << std::endl;
+
+
+
+
+	// 4. Non-Decrease Quick Sort
+	out.open(file_non_decrease_quick_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " << file_non_decrease_quick_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::QUICK_SORT_ITERATIVE, Filling_Method::NON_DECREASE, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_non_decrease_quick_sort << " is closed." << std::endl;
+
+
+
+	// 5. Non-Increase Heap Sort
+	out.open(file_non_increase_heap_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " << file_non_increase_heap_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::HEAP_SORT, Filling_Method::NON_INCREASE, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_non_increase_heap_sort << " is closed." << std::endl;
+
+
+
+
+
+	// 6. Non-Increase Quick Sort
+	out.open(file_non_increase_quick_sort);
+	out.clear();
+	is_open = out.is_open();
+	std::cout << std::boolalpha << "File " << file_non_increase_quick_sort << " is open: " << is_open << std::endl;
+	if (is_open)
+	{
+		int percent = 10;
+		for (size_t w = left_w; w <= right_w; w += step)
+		{
+
+			double avg_time = 0;
+			for (size_t i = 0; i < num_of_exp; ++i)
+			{
+				avg_time += OneTimeExperiment(Sorting_Method::QUICK_SORT_ITERATIVE, Filling_Method::NON_INCREASE, n, q, w, false, false, false);
+			}
+			avg_time /= num_of_exp;
+			out << w << ' ' << avg_time << std::endl;
+			if ((double(w) / double(right_w - left_w)) * 100 > percent)
+			{
+				std::cout << percent << "%" << std::endl;
+				percent += 10;
+			}
+		}
+	}
+	out.close();
+	std::cout << "File " << file_non_increase_quick_sort << " is closed." << std::endl;
+}
